@@ -6,13 +6,13 @@ import 'package:{{project_name}}/features/{{feat_name}}s/domain/entities/{{feat_
 import 'package:{{project_name}}/features/{{feat_name}}s/domain/repositories/{{feat_name}}.repository.dart';
 
 class All{{feat_name.pascalCase()}}Usecase implements UseCase<List<{{feat_name.pascalCase()}}Entity>, NoParams> {
-  final {{feat_name.pascalCase()}}Repository {{feat_name}}Repository;
+  final {{feat_name.pascalCase()}}Repository repository;
 
-  All{{feat_name.pascalCase()}}Usecase({required this.{{feat_name}}Repository});
+  All{{feat_name.pascalCase()}}Usecase({required this.repository});
 
   @override
   Future<Either<Failure, List<{{feat_name.pascalCase()}}Entity>>> call(NoParams params) async {
-    final result = await {{feat_name}}Repository.getAll();
+    final result = await repository.getAll();
 
     return result.fold((f) => Left(f), (v) => Right(v));
   }

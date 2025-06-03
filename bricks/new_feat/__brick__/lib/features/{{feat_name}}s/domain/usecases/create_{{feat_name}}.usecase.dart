@@ -6,13 +6,13 @@ import 'package:{{project_name}}/features/{{feat_name}}s/domain/entities/{{feat_
 import 'package:{{project_name}}/features/{{feat_name}}s/domain/repositories/{{feat_name}}.repository.dart';
 
 class Create{{feat_name.pascalCase()}}Usecase implements UseCase<void, {{feat_name.pascalCase()}}RequestEntity> {
-  final {{feat_name.pascalCase()}}Repository {{feat_name}}Repository;
+  final {{feat_name.pascalCase()}}Repository repository;
 
-  Create{{feat_name.pascalCase()}}Usecase({required this.{{feat_name}}Repository});
+  Create{{feat_name.pascalCase()}}Usecase({required thisrepository});
 
   @override
   Future<Either<Failure, void>> call({{feat_name.pascalCase()}}RequestEntity request) async {
-    final result = await {{feat_name}}Repository.create(request);
+    final result = await repository.create(request);
 
     return result.fold((f) => Left(f), (v) => Right(v));
   }
