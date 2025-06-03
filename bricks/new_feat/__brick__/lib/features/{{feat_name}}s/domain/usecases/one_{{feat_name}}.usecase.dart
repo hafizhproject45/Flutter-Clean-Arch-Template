@@ -8,7 +8,7 @@ import 'package:{{project_name}}/features/{{feat_name}}s/domain/repositories/{{f
 class One{{feat_name.pascalCase()}}Usecase implements UseCase<{{feat_name.pascalCase()}}Entity, String> {
   final {{feat_name.pascalCase()}}Repository repository;
 
-  One{{feat_name.pascalCase()}}Usecase({required thisrepository});
+  One{{feat_name.pascalCase()}}Usecase({required this.repository});
 
   @override
   Future<Either<Failure, {{feat_name.pascalCase()}}Entity>> call(String id) async {
