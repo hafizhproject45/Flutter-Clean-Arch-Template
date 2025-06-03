@@ -3,9 +3,8 @@ import 'package:equatable/equatable.dart';
 import 'package:{{project_name}}/core/usecases/usecase.dart';
 import 'package:{{project_name}}/core/utils/constants.dart';
 
-import 'package:{{project_name}}/features/purchases/domain/entities/purchase.entity.dart';
-import 'package:{{project_name}}/features/purchases/domain/usecases/all_purchase.usecase.dart';
-import 'package:{{project_name}}/features/purchases/domain/usecases/one_purchase.usecase.dart';
+import 'package:popy_shop/features/{{feat_name}}s/domain/usecases/all_{{feat_name}}.usecase.dart';
+import 'package:popy_shop/features/{{feat_name}}s/domain/usecases/one_{{feat_name}}.usecase.dart';
 
 part '{{feat_name}}.state.dart';
 
