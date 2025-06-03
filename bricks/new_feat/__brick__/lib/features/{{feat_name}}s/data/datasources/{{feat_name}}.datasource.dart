@@ -5,13 +5,12 @@ import 'package:{{project_name}}/core/utils/constants.dart';
 
 import 'package:{{project_name}}/features/{{feat_name}}s/data/models/{{feat_name}}.model.dart';
 import 'package:{{project_name}}/features/{{feat_name}}s/data/models/{{feat_name}}_request.model.dart';
-import 'package:{{project_name}}/features/{{feat_name}}s/domain/entities/{{feat_name}}.entity.dart';
 
 abstract class {{feat_name.pascalCase()}}Datasource {
   Future<List<{{feat_name.pascalCase()}}Model>> getAll();
-  Future<{{feat_name.pascalCase()}}Entity> getOne(String id);
-  Future<void> create({{feat_name.pascalCase()}}RequestModel params);
-  Future<void> update({{feat_name.pascalCase()}}RequestModel params);
+  Future<{{feat_name.pascalCase()}}Model> getOne(String id);
+  Future<void> create({{feat_name.pascalCase()}}RequestModel request);
+  Future<void> update({{feat_name.pascalCase()}}RequestModel request);
   Future<void> delete(String id);
 }
 
@@ -43,7 +42,7 @@ class {{feat_name.pascalCase()}}DatasourceImpl extends {{feat_name.pascalCase()}
   }
 
   @override
-  Future<{{feat_name.pascalCase()}}Entity> getOne(String id) async {
+  Future<{{feat_name.pascalCase()}}Model> getOne(String id) async {
     try {
       final res = await baseApi.get('$BASE_URL/{{feat_name}}s/$id');
 
@@ -64,9 +63,9 @@ class {{feat_name.pascalCase()}}DatasourceImpl extends {{feat_name.pascalCase()}
   }
 
   @override
-  Future<void> create({{feat_name.pascalCase()}}RequestModel params) async {
+  Future<void> create({{feat_name.pascalCase()}}RequestModel request) async {
     try {
-      await baseApi.post('$BASE_URL/{{feat_name}}s', data: params);
+      await baseApi.post('$BASE_URL/{{feat_name}}s', data: request.toJson());
     } on DioException catch (e) {
       throw ServerException.fromDioError(e);
     } on ServerException {
@@ -77,9 +76,9 @@ class {{feat_name.pascalCase()}}DatasourceImpl extends {{feat_name.pascalCase()}
   }
 
   @override
-  Future<void> update({{feat_name.pascalCase()}}RequestModel params) async {
+  Future<void> update({{feat_name.pascalCase()}}RequestModel request) async {
     try {
-      await baseApi.patch('$BASE_URL/{{feat_name}}s/${params.id}', data: params);
+      await baseApi.patch('$BASE_URL/{{feat_name}}s/${request.id}', data: request.toJson());
     } on DioException catch (e) {
       throw ServerException.fromDioError(e);
     } on ServerException {

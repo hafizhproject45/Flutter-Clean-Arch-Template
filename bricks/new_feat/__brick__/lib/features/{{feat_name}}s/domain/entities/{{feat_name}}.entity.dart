@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 
 class {{feat_name.pascalCase()}}Entity extends Equatable {
-  final String id;
+  final String? id;
 
   const {{feat_name.pascalCase()}}Entity({
-    required this.id,
+    this.id,
   });
 
   @override
