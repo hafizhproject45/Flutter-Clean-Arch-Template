@@ -1,4 +1,4 @@
-import 'package:popy_shop/features/{{feat_name}}s/domain/entities/{{feat_name}}_request.entity.dart';
+import 'package:{{project_name}}/features/{{feat_name}}s/domain/entities/{{feat_name}}_request.entity.dart';
 
 class {{feat_name.pascalCase()}}RequestModel extends {{feat_name.pascalCase()}}RequestEntity {
   const {{feat_name.pascalCase()}}RequestModel({required super.id});

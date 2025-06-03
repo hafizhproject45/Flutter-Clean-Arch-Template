@@ -1,5 +1,5 @@
-name: new_feat
-description: Clean arch feature
+name: initial
+description: Initial components
 
 version: 0.1.0+1
 
@@ -11,7 +11,9 @@ vars:
     type: string
     description: Project name
     prompt: Feature name ("e.g., todo_apps")?
-  feat_name:
-    type: string
-    description: Feature name
-    prompt: Feature name (Type with singular "e.g., user")?
+
+  is_auth:
+    type: boolean
+    default: true
+    description: Authentication
+    prompt: Do you want to use auth (Y/n)?

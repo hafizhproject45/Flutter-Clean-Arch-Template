@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:popy_shop/core/errors/exceptions.dart';
-import 'package:popy_shop/services/base_api.dart';
-import 'package:popy_shop/core/utils/constants.dart';
+import 'package:{{project_name}}/core/errors/exceptions.dart';
+import 'package:{{project_name}}/services/base_api.dart';
+import 'package:{{project_name}}/core/utils/constants.dart';
 
-import 'package:popy_shop/features/{{feat_name}}s/data/models/{{feat_name}}.model.dart';
-import 'package:popy_shop/features/{{feat_name}}s/data/models/{{feat_name}}_request.model.dart';
-import 'package:popy_shop/features/{{feat_name}}s/domain/entities/{{feat_name}}.entity.dart';
+import 'package:{{project_name}}/features/{{feat_name}}s/data/models/{{feat_name}}.model.dart';
+import 'package:{{project_name}}/features/{{feat_name}}s/data/models/{{feat_name}}_request.model.dart';
+import 'package:{{project_name}}/features/{{feat_name}}s/domain/entities/{{feat_name}}.entity.dart';
 
 abstract class {{feat_name.pascalCase()}}Datasource {
   Future<List<{{feat_name.pascalCase()}}Model>> getAll();

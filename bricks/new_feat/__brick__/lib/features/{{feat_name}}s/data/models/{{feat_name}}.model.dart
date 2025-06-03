@@ -1,4 +1,4 @@
-import 'package:popy_shop/features/{{feat_name}}s/domain/entities/{{feat_name}}.entity.dart';
+import 'package:{{project_name}}/features/{{feat_name}}s/domain/entities/{{feat_name}}.entity.dart';
 
 
 class {{feat_name.pascalCase()}}Model extends {{feat_name.pascalCase()}}Entity {

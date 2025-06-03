@@ -1,3 +1,5 @@
 bricks:
+  initial:
+    path: bricks/initial
   new_feat:
     path: bricks/new_feat
