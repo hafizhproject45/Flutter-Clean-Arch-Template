@@ -4,4 +4,9 @@ class {{feat_name.pascalCase()}}RequestModel extends {{feat_name.pascalCase()}}R
   const {{feat_name.pascalCase()}}RequestModel({super.id});
 
   Map<String, dynamic> toJson() => {'id': id};
+
+  factory {{feat_name.pascalCase()}}RequestModel.fromEntity({{feat_name.pascalCase()}}RequestEntity entity) => {{feat_name.pascalCase()}}RequestModel(
+    id: entity.id,
+  );
+
 }
