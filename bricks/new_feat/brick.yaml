@@ -1,0 +1,13 @@
+name: new_feat
+description: Clean arch feature with optional parent path
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0 <1.0.0"
+
+vars:
+  feat_name:
+    type: string
+    description: Feature name
+    prompt: Feature name (Singular. "ex=user")?
