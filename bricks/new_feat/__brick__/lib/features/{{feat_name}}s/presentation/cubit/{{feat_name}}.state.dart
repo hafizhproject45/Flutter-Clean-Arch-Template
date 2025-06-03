@@ -1,7 +1,4 @@
-// part of '{{feat_name}}.cubit.dart';
-
-import 'package:equatable/equatable.dart';
-import 'package:{{project_name}}/features/{{feat_name}}s/domain/entities/{{feat_name}}.entity.dart';
+part of '{{feat_name}}.cubit.dart';
 
 abstract class {{feat_name.pascalCase()}}State extends Equatable {
   final String? message;
