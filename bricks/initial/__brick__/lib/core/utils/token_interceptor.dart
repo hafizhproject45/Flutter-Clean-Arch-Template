@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-import '../../domain/entities/auth/login.entity.dart';
-import '../../domain/repositories/auth/token.repository.dart';
+import 'package:{{project_name}}/features/auth/domain/entities/auth.entity.dart';
+import 'package:{{project_name}}/features/auth/domain/repositories/token.repository.dart';
 import '../errors/failures.dart';
 
 class TokenInterceptor extends Interceptor {
@@ -15,10 +15,10 @@ class TokenInterceptor extends Interceptor {
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) async {
-    Either<Failure, LoginEntity> loginDataRequest =
+    Either<Failure, AuthEntity> loginDataRequest =
         await tokenRepository.getToken();
 
-    LoginEntity? loginData;
+    AuthEntity? loginData;
 
     loginData = loginDataRequest.fold(
       (l) => loginData = null,

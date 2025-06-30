@@ -98,9 +98,7 @@ class Utility {
       text: TextSpan(
         text: label,
         style: AppTextStyle.medium.copyWith(color: AppColor.textBody),
-        children: const [
-          TextSpan(text: ' *', style: AppTextStyle.smallBoldRed),
-        ],
+        children: [TextSpan(text: ' *', style: AppTextStyle.smallBoldRed)],
       ),
     );
   }

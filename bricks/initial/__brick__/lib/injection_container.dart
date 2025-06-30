@@ -5,20 +5,11 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'core/utils/constants.dart';
 import 'core/utils/token_interceptor.dart';
-import 'data/datasources/auth/auth.local.datasource.dart';
-import 'data/datasources/auth/auth.remote.datasource.dart';
-import 'data/datasources/auth/token.local.datasource.dart';
-import 'data/repositories/auth/auth.repository.impl.dart';
-import 'data/repositories/auth/token.repository.impl.dart';
-import 'domain/repositories/auth/auth.repository.dart';
-import 'domain/repositories/auth/token.repository.dart';
-import 'domain/usecases/auth/check_login.usecase.dart';
-import 'domain/usecases/auth/get_login_data.usecase.dart';
-import 'domain/usecases/auth/login.usecase.dart';
-import 'domain/usecases/auth/logout.usecase.dart';
-import 'presentation/cubit/auth/get_login_data/get_login_data.cubit.dart';
-import 'presentation/cubit/auth/login/login.cubit.dart';
 import 'services/base_api.dart';
+
+import 'package:{{project_name}}/features/auth/domain/repositories/token.repository.dart';
+import 'package:{{project_name}}/features/auth/data/repositories/token.repository.impl.dart';
+import 'package:{{project_name}}/features/auth/data/datasources/token.local.datasource.dart';
 
 var sl = GetIt.instance;
 

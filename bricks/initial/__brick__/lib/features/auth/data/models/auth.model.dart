@@ -31,17 +31,11 @@ class AuthModel extends AuthEntity {
        );
 
   factory AuthModel.fromJson(Map<String, dynamic> map) {
-    final mapUser = map['user'];
-
-    if (mapUser == null) {
-      throw AuthException(message: "User data is missing from response");
-    }
-
     return AuthModel(
-      id: mapUser['id'] as String,
-      accessToken: map['access_token'] as String,
-      refreshToken: map['refresh_token'] as String,
-      role: Utility.formatUserRole(mapUser['role']),
+      id: map['id'],
+      accessToken: map['access_token'],
+      refreshToken: map['refresh_token'],
+      role: map['role'],
     );
   }
 }

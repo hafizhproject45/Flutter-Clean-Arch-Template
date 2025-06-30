@@ -2,6 +2,8 @@
 
 enum CrudOperation { getAll, getOne, create, update, delete }
 
+enum AuthOperation { checkLogin, login, logout }
+
 extension CrudOperationX on CrudOperation {
   String get value {
     switch (this) {

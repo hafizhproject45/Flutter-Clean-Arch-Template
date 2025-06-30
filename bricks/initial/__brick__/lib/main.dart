@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
+// import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:get/get.dart';
 import 'package:toastification/toastification.dart';
 import 'package:{{project_name}}/features/auth/presentation/cubit/auth.cubit.dart';
+import 'package:{{project_name}}/presentation/widgets/global/splash.dart';
+import 'package:{{project_name}}/features/auth/presentation/pages/login/index.dart';
 
 import 'core/utils/colors.dart';
 import 'core/utils/route.dart';
-import 'features/auth/presentation/pages/index.dart';
 import 'injection_container.dart';
-import 'presentation/pages/splash/index.dart';
 import 'presentation/widgets/global/navbar.dart';
 import 'services/initialize_app.dart';
 
@@ -35,8 +35,8 @@ class MainApp extends StatelessWidget {
         child: GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Popy's Management",
-          navigatorObservers: [FlutterSmartDialog.observer],
-          builder: FlutterSmartDialog.init(),
+          // navigatorObservers: [FlutterSmartDialog.observer],
+          // builder: FlutterSmartDialog.init(),
           theme: ThemeData.light().copyWith(
             scaffoldBackgroundColor: AppColor.background,
             brightness: Brightness.light,

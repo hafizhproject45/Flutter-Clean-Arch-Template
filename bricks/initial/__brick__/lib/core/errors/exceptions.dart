@@ -2,7 +2,7 @@
 import 'package:dio/dio.dart';
 import 'package:get/route_manager.dart';
 
-import '../../domain/usecases/auth/logout.usecase.dart';
+import 'package:{{project_name}}/features/auth/domain/usecases/logout.usecase.dart';
 import '../../injection_container.dart';
 import '../usecases/usecase.dart';
 import '../utils/constants.dart';

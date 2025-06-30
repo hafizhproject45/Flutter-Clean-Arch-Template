@@ -2,9 +2,11 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import 'package:{{project_name}}/core/usecases/usecase.dart';
-import 'package:{{project_name}}/core/utils/constants.dart';
 import 'package:{{project_name}}/features/{{feat_name}}s/domain/entities/{{feat_name}}.entity.dart';
 import 'package:{{project_name}}/features/{{feat_name}}s/domain/entities/{{feat_name}}_request.entity.dart';
+import 'package:{{project_name}}/core/utils/enums.dart';
+
+
 
 import 'package:{{project_name}}/features/{{feat_name}}s/domain/usecases/all_{{feat_name}}.usecase.dart';
 import 'package:{{project_name}}/features/{{feat_name}}s/domain/usecases/one_{{feat_name}}.usecase.dart';
