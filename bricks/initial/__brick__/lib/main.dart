@@ -34,7 +34,7 @@ class MainApp extends StatelessWidget {
       child: ToastificationWrapper(
         child: GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: "Popy's Management",
+          title: "{{project_name}}",
           navigatorObservers: [FlutterSmartDialog.observer],
           builder: FlutterSmartDialog.init(),
           theme: ThemeData.light().copyWith(

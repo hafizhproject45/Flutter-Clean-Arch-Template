@@ -80,8 +80,6 @@ Run this command to run the generator. For AuthModel
 dart run build_runner build
 ```
 
-:warning: Ignore .env in root .gitignore
-
 ## Update Mason Template
 
 ```bash
