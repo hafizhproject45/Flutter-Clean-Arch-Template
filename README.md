@@ -4,6 +4,8 @@ This repository contains Mason templates for creating a clean architecture struc
 
 ## Requirements
 
+- Flutter version (Minimum) : `3.29.2`
+- Dart version (Minimum) : `3.7.2`
 - [Mason CLI](https://mason.dev/docs/cli) installed on your machine.
 - A Flutter project where you want to use the templates.
 
@@ -46,7 +48,7 @@ mason add {{name}} --git-url git@github.com:hafizhproject45/Flutter-Clean-Arch-T
 mason get
 ```
 
-**notes: Replace {{name}} with name of feature**
+#### **notes: Replace {{name}} with name of feature**
 
 ### Step 4: Check Available Templates
 
@@ -66,12 +68,26 @@ Once the template is added and verified, you can generate the corresponding feat
 mason make {{name}}
 ```
 
-**notes: Replace {{name}} with the template name you added (e.g., initial, new_feat).**
+#### **notes: Replace {{name}} with the template name you added (e.g., initial, new_feat).**
+
+## When Running the Feature
+
+When running feat {{name: initial}}
+
+Run this command to run the generator. For AuthModel
+
+```BASH
+dart run build_runner build
+```
+
+:warning: Ignore .env in root .gitignore
 
 ## Update Mason Template
 
 ```bash
 mason update
+mason upgrade
+mason get
 ```
 
 ## Folder Structure

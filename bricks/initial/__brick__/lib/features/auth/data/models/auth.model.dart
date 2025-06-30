@@ -1,8 +1,6 @@
 // ignore_for_file: overridden_fields, annotate_overrides
 
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:{{project_name}}/core/errors/exceptions.dart';
-import 'package:{{project_name}}/core/utils/utility.dart';
 import 'package:{{project_name}}/features/auth/domain/entities/auth.entity.dart';
 
 part 'auth.model.g.dart';
