@@ -10,10 +10,5 @@ vars:
   project_name:
     type: string
     description: Project name
-    prompt: Feature name ("e.g., todo_apps")?
-
-  is_auth:
-    type: boolean
-    default: true
-    description: Authentication
-    prompt: Do you want to use auth (Y/n)?
+    default: apps
+    prompt: Project name ("e.g., apps")?

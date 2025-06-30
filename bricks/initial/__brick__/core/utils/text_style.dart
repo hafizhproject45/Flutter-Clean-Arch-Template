@@ -2,215 +2,155 @@ import 'package:flutter/material.dart';
 
 import 'colors.dart';
 
+class AppBaseTextStyle {
+  static const TextStyle baseHeading = TextStyle(
+    color: AppColor.primary,
+    fontSize: 24,
+    fontWeight: FontWeight.w800,
+  );
+  static const TextStyle baseSubHeading = TextStyle(
+    color: AppColor.primary,
+    fontSize: 20,
+    fontWeight: FontWeight.w800,
+  );
+  static const TextStyle baseBody = TextStyle(
+    color: AppColor.primary,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+  );
+  static const TextStyle baseMedium = TextStyle(
+    color: AppColor.primary,
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+  );
+  static const TextStyle baseSmall = TextStyle(
+    color: AppColor.primary,
+    fontSize: 10,
+    fontWeight: FontWeight.w500,
+  );
+}
+
 class AppTextStyle {
-  //? HEADING
-  static const TextStyle heading = TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.w800, // BOLD
+  // Heading Styles
+  static final heading = AppBaseTextStyle.baseHeading.copyWith(
+    fontWeight: FontWeight.w800,
     color: AppColor.textHeading,
   );
-  static const TextStyle headingBoldPrimary = TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.w900, // BOLD
+  static final headingBoldPrimary = AppBaseTextStyle.baseHeading.copyWith(
+    fontWeight: FontWeight.w900,
     color: AppColor.primary,
   );
-  static const TextStyle headingPrimary = TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.w800, // BOLD
+  static final headingPrimary = AppBaseTextStyle.baseHeading.copyWith(
+    fontWeight: FontWeight.w800,
     color: AppColor.primary,
   );
-  static const TextStyle headingAccent = TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.w800, // BOLD
-    color: AppColor.primary,
-  );
-  static const TextStyle headingWhite = TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.w800, // BOLD
+  static final headingAccent = headingPrimary;
+  static final headingWhite = AppBaseTextStyle.baseHeading.copyWith(
+    fontWeight: FontWeight.w800,
     color: AppColor.white,
   );
 
-  //? SUB HEADING
-  static const TextStyle subHeading = TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.w800, // MEDIUM
+  // Sub Heading
+  static final subHeading = AppBaseTextStyle.baseSubHeading.copyWith(
+    fontWeight: FontWeight.w800,
     color: AppColor.textHeading,
   );
-  static const TextStyle subHeadingPrimary = TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.w800, // MEDIUM
+  static final subHeadingPrimary = AppBaseTextStyle.baseSubHeading.copyWith(
+    fontWeight: FontWeight.w800,
     color: AppColor.primary,
   );
-  static const TextStyle subHeadingPrimaryBold = TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.w800, // MEDIUM
-    color: AppColor.primary,
-  );
-  static const TextStyle subHeadingAccent = TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.w800, // MEDIUM
-    color: AppColor.primary,
-  );
-  static const TextStyle subHeadingWhite = TextStyle(
-    fontSize: 20,
-    fontWeight: FontWeight.w800, // MEDIUM
+  static final subHeadingPrimaryBold = subHeadingPrimary;
+  static final subHeadingAccent = subHeadingPrimary;
+  static final subHeadingWhite = AppBaseTextStyle.baseSubHeading.copyWith(
+    fontWeight: FontWeight.w800,
     color: Colors.white,
   );
 
-  //? BODY
-  static const TextStyle title = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w700, // MEDIUM
+  // Body Styles
+  static final body = AppBaseTextStyle.baseBody.copyWith(
+    fontWeight: FontWeight.w600,
   );
-
-  //? BODY
-  static const TextStyle body = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w600, // MEDIUM
+  static final bodyBold = AppBaseTextStyle.baseBody.copyWith(
+    fontWeight: FontWeight.w800,
   );
-  static const TextStyle bodyBold = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w800, // BOLD
-  );
-  static const TextStyle bodyBoldPrimary = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w800, // BOLD
-    color: AppColor.primary,
-  );
-  static const TextStyle bodyBoldSecondary = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w800, // BOLD
-    color: AppColor.secondary,
-  );
-  static const TextStyle bodyBoldRed = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w800, // BOLD
+  static final bodyBoldPrimary = bodyBold.copyWith(color: AppColor.primary);
+  static final bodyBoldSecondary = bodyBold.copyWith(color: AppColor.secondary);
+  static final bodyBoldRed = bodyBold.copyWith(color: Colors.red);
+  static final bodyRed = AppBaseTextStyle.baseBody.copyWith(
+    fontWeight: FontWeight.w600,
     color: Colors.red,
   );
-  static const TextStyle bodyRed = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w600, // MEDIUM
-    color: Colors.red,
-  );
-  static const TextStyle bodyBoldWhite = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w800, // MEDIUM
+  static final bodyBoldWhite = bodyBold.copyWith(color: Colors.white);
+  static final bodyWhite = AppBaseTextStyle.baseBody.copyWith(
+    fontWeight: FontWeight.w600,
     color: Colors.white,
   );
-  static const TextStyle bodySosmed = TextStyle(
-    fontSize: 13,
-    fontWeight: FontWeight.w500, // MEDIUM
-    color: Colors.white,
-  );
-  static const TextStyle bodyWhite = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w600, // MEDIUM
-    color: Colors.white,
-  );
-  static const TextStyle bodyThinPrimary = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500, // MEDIUM
+  static final bodyThinPrimary = AppBaseTextStyle.baseBody.copyWith(
+    fontWeight: FontWeight.w500,
     color: AppColor.primary,
   );
-  static const TextStyle bodyThin = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500, // MEDIUM
+  static final bodyThin = AppBaseTextStyle.baseBody.copyWith(
+    fontWeight: FontWeight.w500,
     color: AppColor.textSmall,
   );
-  static const TextStyle bodyThinBlack = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w500, // MEDIUM
+  static final bodyThinBlack = bodyThin.copyWith(color: Colors.black);
+  static final bodyThinWhite = AppBaseTextStyle.baseBody.copyWith(
+    fontWeight: FontWeight.w400,
+    color: AppColor.white,
+  );
+
+  // Medium Styles
+  static final medium = AppBaseTextStyle.baseMedium.copyWith(
+    fontWeight: FontWeight.w400,
+    color: AppColor.textBody,
+  );
+  static final mediumBold = AppBaseTextStyle.baseMedium.copyWith(
+    fontWeight: FontWeight.w700,
+  );
+  static final mediumBoldPrimary = mediumBold.copyWith(color: AppColor.primary);
+  static final mediumPrimary = AppBaseTextStyle.baseMedium.copyWith(
+    fontWeight: FontWeight.w400,
+    color: AppColor.primary,
+  );
+  static final mediumWhite = AppBaseTextStyle.baseMedium.copyWith(
+    fontWeight: FontWeight.w400,
+    color: AppColor.white,
+  );
+  static final mediumBlack = AppBaseTextStyle.baseMedium.copyWith(
+    fontWeight: FontWeight.w400,
     color: Colors.black,
   );
-  static const TextStyle bodyThinWhite = TextStyle(
-    fontSize: 14,
-    fontWeight: FontWeight.w400, // MEDIUM
-    color: AppColor.white,
-  );
-
-  //? MEDIUM
-  static const TextStyle medium = TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w400, // REGULAR
-  );
-  static const TextStyle mediumBold = TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w700, // SEMI BOLD
-  );
-  static const TextStyle mediumBoldPrimary = TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w700, // SEMI BOLD
-    color: AppColor.primary,
-  );
-  static const TextStyle mediumPrimary = TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w400, // REGULAR
-    color: AppColor.primary,
-  );
-  static const TextStyle mediumWhite = TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w400, // REGULAR
-    color: AppColor.white,
-  );
-  static const TextStyle mediumBlack = TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w400, // REGULAR
-    color: Colors.black,
-  );
-  static const TextStyle mediumRed = TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w400, // REGULAR
+  static final mediumRed = AppBaseTextStyle.baseMedium.copyWith(
+    fontWeight: FontWeight.w400,
     color: Colors.red,
   );
-  static const TextStyle mediumThin = TextStyle(
-    fontSize: 12,
-    fontWeight: FontWeight.w400, // REGULAR
+  static final mediumThin = AppBaseTextStyle.baseMedium.copyWith(
+    fontWeight: FontWeight.w400,
     color: AppColor.textSmall,
   );
 
-  //? SMALL
-  static const TextStyle smallBold = TextStyle(
-    fontSize: 10,
-    fontWeight: FontWeight.w800, // BOLD
+  // Small Styles
+  static final smallBold = AppBaseTextStyle.baseSmall.copyWith(
+    fontWeight: FontWeight.w800,
   );
-  static const TextStyle smallBoldPrimary = TextStyle(
-    fontSize: 10,
-    fontWeight: FontWeight.w800, // BOLD
-    color: AppColor.primary,
-  );
-  static const TextStyle smallBoldSecondary = TextStyle(
-    fontSize: 10,
-    fontWeight: FontWeight.w800, // BOLD
+  static final smallBoldPrimary = smallBold.copyWith(color: AppColor.primary);
+  static final smallBoldSecondary = smallBold.copyWith(
     color: AppColor.secondary,
   );
-  static const TextStyle smallBoldRed = TextStyle(
-    fontSize: 10,
-    fontWeight: FontWeight.w800, // BOLD
-    color: Colors.red,
-  );
-  static const TextStyle smallBoldGreen = TextStyle(
-    fontSize: 10,
-    fontWeight: FontWeight.w800, // BOLD
-    color: Colors.green,
-  );
-  static const TextStyle small = TextStyle(
-    fontSize: 10,
-    fontWeight: FontWeight.w500, //REGULAR
+  static final smallBoldRed = smallBold.copyWith(color: Colors.red);
+  static final smallBoldGreen = smallBold.copyWith(color: Colors.green);
+  static final small = AppBaseTextStyle.baseSmall.copyWith(
+    fontWeight: FontWeight.w500,
     color: AppColor.textHeading,
   );
-  static const TextStyle smallWhite = TextStyle(
-    fontSize: 10,
-    fontWeight: FontWeight.w500, //REGULAR
-    color: AppColor.white,
-  );
-  static const TextStyle smallThin = TextStyle(
-    fontSize: 10,
-    fontWeight: FontWeight.w400, //REGULAR
+  static final smallRed = small.copyWith(color: Colors.red);
+  static final smallWhite = small.copyWith(color: AppColor.white);
+  static final smallThin = AppBaseTextStyle.baseSmall.copyWith(
+    fontWeight: FontWeight.w400,
     color: AppColor.textSmall,
   );
-  static const TextStyle smallPrimary = TextStyle(
-    fontSize: 10,
-    fontWeight: FontWeight.w400, //REGULAR
+  static final smallPrimary = small.copyWith(
+    fontWeight: FontWeight.w400,
     color: AppColor.primary,
   );
 }

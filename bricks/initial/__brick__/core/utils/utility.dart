@@ -1,7 +1,10 @@
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:{{project_name}}/core/utils/colors.dart';
+import 'package:{{project_name}}/core/utils/text_style.dart';
 
 import 'constants.dart';
 
@@ -21,13 +24,18 @@ class Utility {
   }
 
   /// Format date to `25 Apr 2024`
-  static String formatDateLocale(String? dateString) {
+  static String formatDateLocale(String? dateString, {bool? withTime = false}) {
     try {
       if (dateString == null) {
         return '-';
       }
       DateTime date = DateTime.parse(dateString);
-      DateFormat formatter = DateFormat('dd MMM yyyy', DATE_LOCALE);
+
+      DateFormat formatter =
+          withTime != true
+              ? DateFormat('dd MMM yyyy', DATE_LOCALE)
+              : DateFormat('dd MMM yyyy | HH:mm', DATE_LOCALE);
+
       return formatter.format(date);
     } catch (e) {
       return '-';
@@ -79,21 +87,46 @@ class Utility {
 
   //! String Formatting
 
-  static String formatUserRole(String? rawRole) {
-    if (rawRole == null) {
-      return '-';
-    }
+  static String capitalize(String value) {
+    return value.isEmpty
+        ? value
+        : '${value[0].toUpperCase()}${value.substring(1)}';
+  }
 
-    switch (rawRole.toUpperCase()) {
-      case 'SUPER_ADMIN':
-        return 'Super Admin';
-      case 'MANAGEMENT':
-        return 'Management';
-      case 'WORKER':
-        return 'Karyawan';
-      default:
-        return rawRole;
-    }
+  static Widget requiredLabel(String label) {
+    return RichText(
+      text: TextSpan(
+        text: label,
+        style: AppTextStyle.medium.copyWith(color: AppColor.textBody),
+        children: const [
+          TextSpan(text: ' *', style: AppTextStyle.smallBoldRed),
+        ],
+      ),
+    );
+  }
+
+  // Format int → Rp xxx.xxx
+  static String toLocale(int number) {
+    return NumberFormat.currency(
+      locale: 'id_ID',
+      symbol: 'Rp ',
+      decimalDigits: 0,
+    ).format(number);
+  }
+
+  static String trimLocale(String number) {
+    // Hapus Rp dan spasi, tetap return String
+    return number
+        .replaceAll('Rp', '')
+        .replaceAll('.', '')
+        .replaceAll(' ', '')
+        .trim();
+  }
+
+  static int parseLocale(String number) {
+    // Bisa pakai trimLocale biar DRY (tidak duplikasi kode)
+    final cleaned = trimLocale(number);
+    return int.tryParse(cleaned) ?? 0;
   }
 
   /// Convert phone number to `+62` format
@@ -108,22 +141,6 @@ class Utility {
     }
   }
 
-  /// Decode a JSON FAQ
-  static String decodeFAQ(String? jsonString) {
-    if (jsonString == null || jsonString == '[]') {
-      return '-';
-    }
-    List<dynamic> parsedJson = jsonDecode(jsonString);
-    List<String> insertValues =
-        parsedJson
-            .where((element) => element.containsKey('insert'))
-            .map((element) => element['insert'].toString())
-            .toList();
-    String result = insertValues.join(' ');
-    if (result.endsWith('\n')) result = result.replaceFirst(RegExp(r'\n$'), '');
-    return result;
-  }
-
   /// Remove HTML tags
   static String removeHtmlTags(String htmlText) {
     final regex = RegExp(r'<[^>]*>');
@@ -133,12 +150,6 @@ class Utility {
   /// Generate image placeholder URL
   static String imagePlaceHolder(int width, int height) {
     return 'https://via.placeholder.com/${width}x$height.png?text=No+Image';
-  }
-
-  /// Generate String Invoice Number
-  static String getInvoiceNumber() {
-    final now = DateTime.now();
-    return "INV${now.year}${now.month.toString().padLeft(2, '0')}${now.day.toString().padLeft(2, '0')}-${now.hour.toString().padLeft(2, '0')}${now.minute.toString().padLeft(2, '0')}${now.second.toString().padLeft(2, '0')}";
   }
 
   //! Miscellaneous Utilities

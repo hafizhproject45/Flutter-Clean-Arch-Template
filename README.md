@@ -82,6 +82,7 @@ lib/
 ├── core/ --------------------------------- # Contains core and reusable components used throughout the application
 │   ├── errors/ --------------------------- # Stores various error types or exceptions used within the application
 │   ├── helpers/ -------------------------- # Helper functions or classes that are frequently used across the application
+│   ├── params/ --------------------------- # Parameter Global for all method
 │   ├── usecase/ -------------------------- # Template usecases containing the business logic
 │   └── utils/ ---------------------------- # Contains utility and helper functions needed throughout the app
 │

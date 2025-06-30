@@ -2,10 +2,10 @@
 import 'package:dio/dio.dart';
 import 'package:get/route_manager.dart';
 
-import 'package:{{project_name}}/core/usecases/usecase.dart';
-import 'package:{{project_name}}/core/utils/constants.dart';
-import 'package:{{project_name}}/features/{{feat_name}}/domain/usecases/auth/logout.usecase.dart';
-import 'package:{{project_name}}/injection_container.dart';
+import '../../domain/usecases/auth/logout.usecase.dart';
+import '../../injection_container.dart';
+import '../usecases/usecase.dart';
+import '../utils/constants.dart';
 
 class ServerException implements Exception {
   final String? message;
