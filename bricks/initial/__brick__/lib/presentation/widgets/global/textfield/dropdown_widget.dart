@@ -8,7 +8,7 @@ class DropdownWidget extends StatelessWidget {
   const DropdownWidget({
     super.key,
     this.controller,
-    this.search = false,
+    this.search = true,
     this.onChanged,
     this.width,
     this.label,
@@ -48,10 +48,34 @@ class DropdownWidget extends StatelessWidget {
         DropDownTextField(
           isEnabled: enabled!,
           controller: controller,
+          listTextStyle: AppTextStyle.medium.copyWith(height: 1.4),
           enableSearch: search!,
+          searchDecoration: InputDecoration(
+            prefixIcon: Icon(Icons.search, color: AppColor.textSmall, size: 20),
+            hintText: 'Cari...',
+            hintStyle: AppTextStyle.mediumThin,
+            errorStyle: AppTextStyle.mediumRed,
+            contentPadding: EdgeInsets.symmetric(vertical: 0),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(color: AppColor.textfield),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: AppColor.textfield),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: AppColor.textfield),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.red),
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
           searchTextStyle: AppTextStyle.medium,
-          clearOption: clearOption!,
-          textStyle: AppTextStyle.medium,
+          clearOption: enabled ?? clearOption!,
+          textStyle: AppTextStyle.medium.copyWith(height: 1.5),
           textFieldDecoration: InputDecoration(
             enabled: enabled!,
             filled: true,
@@ -77,7 +101,6 @@ class DropdownWidget extends StatelessWidget {
             ),
           ),
           clearIconProperty: IconProperty(color: AppColor.textBody),
-          listTextStyle: AppTextStyle.medium,
           validator: validator,
           dropdownRadius: 10,
           dropDownIconProperty:
